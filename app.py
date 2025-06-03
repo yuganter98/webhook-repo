@@ -5,8 +5,8 @@ import config
 
 app = Flask(__name__)
 client = MongoClient(config.MONGO_URI)
-db = client.github_events
-collection = db.events
+db = client.webhookdb
+collection = db.githubEvents
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
