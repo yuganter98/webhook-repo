@@ -1,1 +1,1 @@
-MONGO_URI = "mongodb+srv://bobhuman:<h6RaOTgr406oemzo>@cluster0.ftcvorc.mongodb.net/"
+MONGO_URI = "mongodb+srv://bobhuman:<h6RaOTgr406oemzo>@cluster0.ftcvorc.mongodb.net"
