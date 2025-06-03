@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="15">
+  <title>GitHub Events</title>
+</head>
+<body>
+  <h2>GitHub Activity Log</h2>
+  <ul>
+    {% for event in data %}
+      <li>
+        {% if event.action == "PUSH" %}
+          {{ event.author }} pushed to {{ event.from_branch }} on {{ event.timestamp }}
+        {% elif event.action == "PULL_REQUEST" %}
+          {{ event.author }} submitted a pull request from {{ event.from_branch }} to {{ event.to_branch }} on {{ event.timestamp }}
+        {% elif event.action == "MERGE" %}
+          <strong>{{ event.author }} merged branch {{ event.from_branch }} to {{ event.to_branch }} on {{ event.timestamp }}</strong>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
